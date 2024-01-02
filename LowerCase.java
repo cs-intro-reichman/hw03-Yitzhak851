@@ -1,4 +1,5 @@
 public class LowerCase {
+    // declare variables
     static String str1, str2, tempStr;
     static char isTemp;
     static int i;
