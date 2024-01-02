@@ -4,13 +4,6 @@ public class LowerCase {
     static char isTemp;
     static int i;
 
-    public static void main(String[] args) {
-        str1 = args[0];
-        str2 = "";
-        lowerCase(str1);
-        System.out.println(str2);
-    }
-
     public static void lowerCase(String str1) {
         for (i = 0; i < str1.length(); i++) {
             // temporary char
@@ -106,10 +99,16 @@ public class LowerCase {
             case "Z":
                 str2 += "z";
                 break;
-            default: 
+            default:
                 str2 += tempStr;
                 break;
         }
-        
+    }
+
+    public static void main(String[] args) {
+        str1 = args[0];
+        str2 = "";
+        lowerCase(str1);
+        System.out.println(str2);
     }
 }

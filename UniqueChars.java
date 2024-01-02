@@ -1,17 +1,34 @@
-/** String processing exercise 2. */
 public class UniqueChars {
-    public static void main(String[] args) {  
-        String str = args[0];
-        System.out.println(uniqueChars(str));
+        // declare variables
+        static String str1, str2;
+        static char tempChar;
+        static int i,j;
+
+    public static void uniqueChars(String str1) {
+        for (i = 0; i < str1.length() ; i++) {
+            tempChar = str1.charAt(i);
+            if (i==0) {
+                str2 += tempChar;
+            } else {
+                checkingDouble(tempChar);
+            }
+        }
     }
 
-    /**
-     * Returns a string which is identical to the original string, 
-     * except that all the duplicate characters are removed,
-     * unless they are space characters.
-     */
-    public static String uniqueChars(String s) {
-        // Replace the following statement with your code
-        return null;
+    public static void checkingDouble(char tempChar) {
+        for (j = 0 ; j < str2.length(); j++) {
+            if (str2.charAt(j) == tempChar) {
+                break;
+            } else {
+                str2 += tempChar;
+            }
+        }
     }
+    public static void main(String[] args) {  
+        str1 = "committe";
+        str2 = "";
+        uniqueChars(str1);
+        System.out.println(str2);
+    }
+
 }
