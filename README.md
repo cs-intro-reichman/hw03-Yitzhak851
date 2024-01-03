@@ -1,25 +1,20 @@
+# Hi and welcome to my Homework repo ! 🚀
 # Homework 3 Submission
 
-### Submission Checklist
+Hello everyone , 
+This 'repository' contain my third H.W, 
+At the course "Introduction to computer science" :) 
+Good luck!! 👩‍💻🧙‍♂️🚀👩‍💻🔥
 
-All the following files exist in this repository:
+The following files exist in this repository:
 
 - LoanCalc.java
 - LowerCase.java
 - UniqueChars.java
 - Calendar.java
-- **HW3Code.pdf** (The PDF document containing your code)
+- **HW3Code.pdf** 
 
-### Submission Deadline
-
-The submission deadline for this assignment is **January 11, 2024, 23:55**.
-
-### Checking Your Grade
-
-You do not need to manually submit the zip file on Moodle. 
-We have set up an automatic grading system that evaluates your code after each commit you make to this repository. 
-You can check your grade using Github Actions.
-
-Good luck with your assignment!
+# Ready, Set, Code!
+# Good luck with my assignment!
 
 
