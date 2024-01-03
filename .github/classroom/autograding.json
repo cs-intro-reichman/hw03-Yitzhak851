@@ -145,7 +145,7 @@
         "setup": "javac UniqueChars.java",
         "run": "java UniqueChars \"umbrella academy\"",
         "input": "",
-        "output": "umbrela cady",
+        "output": "umbrela cdy",
         "comparison": "exact",
         "timeout": 10,
         "points": 1.5
@@ -185,7 +185,7 @@
         "setup": "javac UniqueChars.java",
         "run": "java UniqueChars pineapple",
         "input": "",
-        "output": "pineapl",
+        "output": "pineal",
         "comparison": "exact",
         "timeout": 10,
         "points": 1.5
