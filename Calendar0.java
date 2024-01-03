@@ -1,12 +1,8 @@
-/*
- * Checks if a given year is a leap year or a common year,
- * and computes the number of days in a given month and a given year. 
- */
 public class Calendar0 {
-	// Gets a year (command-line argument), and tests the functions isLeapYear and
-	// nDaysInMonth.
+	static int year; // year for which we want to construct a calendar
+	static boolean isLeapYear; // true if year is a leap year
 	public static void main(String args[]) {
-		int year = Integer.parseInt(args[0]);
+		year = Integer.parseInt(args[0]);
 		isLeapYearTest(year);
 		nDaysInMonthTest(year);
 	}
@@ -27,8 +23,11 @@ public class Calendar0 {
 
 	// Returns true if the given year is a leap year, false otherwise.
 	public static boolean isLeapYear(int year) {
-		// Replace the following statement with your code
-		return false;
+		// check if the year is divisble by 400
+		isLeapYear = ((year % 400) == 0);
+		// than checks if the year is divisible by 4 and not by 100
+		isLeapYear = isLeapYear || ((year % 4) == 0 && (year % 100) != 0);
+		return isLeapYear;
 	}
 
 	// Returns the number of days in the given month and year.

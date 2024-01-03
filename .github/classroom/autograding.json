@@ -95,7 +95,7 @@
         "setup": "javac LowerCase.java",
         "run": "java LowerCase \"AaBbCcDdEe\"",
         "input": "",
-        "output": "aabbccdde",
+        "output": "aabbccddee",
         "comparison": "exact",
         "timeout": 10,
         "points": 1.5
