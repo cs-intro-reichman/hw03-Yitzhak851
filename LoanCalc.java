@@ -14,7 +14,7 @@ public class LoanCalc {
 	 * Given: the sum of the loan (loan), the periodical interest rate (rate),
 	 * the number of periods (n), and epsilon (epsilon), a tolerance level.
 	 */
-	// Side effect: modifies the class variable iterationCounter.
+	// Side effect: modifies the class variable stepCounter.
 	public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {
 		while (Math.abs(n) > epsilon)) {
 			
