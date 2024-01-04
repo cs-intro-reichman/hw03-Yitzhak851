@@ -1,4 +1,5 @@
 public class LoanCalc {
+// test
 	// declare some few class static variables
 	static double epsilon; // The computation tolerance (estimation error)
 	static int iterationCounter; // Monitors the efficiency of the calculation
