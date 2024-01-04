@@ -1,65 +1,55 @@
 public class Calendar1 {
 	// Starting the calendar on 1/1/1900
-	static int dayOfMonth = 1; // 1st of the month
-	static int month = 1; // January
-	static int year = 1900; // year for which we want to construct a calendar
-	static int dayOfWeek = 2; // 1.1.1900 was a Monday
-	static int nDaysInMonth = 31; // Number of days in January
-	static int debugDaysCounter;
-	static int debugMonthCounter;
+	static int curMonth;
+	static int curDay;
+	static int curYear;
+	static int endYear;
+	static int curDayOfWeek; // ==> (2) 1.1.1900 was a Monday
+	static int nDaysInMonth; // num of days at curr month
 	static boolean isLeapYear; // true if year is a leap year
 	static int nDays; // number of days in the month
-	// 31.12.1999 inclusive
+	static int countSunday;
 
 	public static void main(String args[]) {
-		printCalendar();
+		advance();
 	}
-
-	public static void printCalendar() {
-
-		// year = 1900;
-		while (year <= 1999) {
-			debugDaysCounter = nDaysInMonth(month, year); // debugDaysCounter= 31
-			debugMonthCounter = 12;
-			while (debugDaysCounter >= dayOfMonth) {
-				System.out.println(dayOfMonth + "/" + month + "/" + year);
-				debugDaysCounter--;
-			}
-			while (month <= debugMonthCounter) {
-				month++;
-				debugDaysCounter = nDaysInMonth(month, year); // debugDaysCounter= 31
-			}
-
-			// isLeapYear(year);
-			// nDaysInMonth(month, year);
-			// printCalendar();
-					//// Write the body of the while
-			// advance();
-
-			//// If you want to stop the loop after n days, replace the condition of the
-			//// if statement with the condition (debugDaysCounter == n)
-			if (false) {
-				break;
-			}
-			year++; // advance to the next year
-		}
-	}
-	// 1/1/1900
-	// 2/1/1900
-	// 3/1/1900
-	// 4/1/1900
-	// 5/1/1900
-	// 6/1/1900
-	// 7/1/1900 Sunday
 
 	// Advances the date (day, month, year) and the day-of-the-week.
 	// If the month changes, sets the number of days in this month.
 	// Side effects: changes the static variables dayOfMonth, month, year,
 	// dayOfWeek, nDaysInMonth.
-	private static void advance() {
-		for (month = 1; month <= 12; month++) {
-			nDaysInMonth(month, year);
+	public static void advance() {
+		curYear = 1900;
+		endYear = 1999;
+		curDayOfWeek = 2;
+		countSunday = 0;
+		while (curYear <= endYear) {
+			curMonth = 1;
+			while (curMonth <= 12) {
+				curDay = 1;
+				while (curDay <= nDaysInMonth(curMonth, curYear)) {
+					if (curDayOfWeek <= 7) {
+						System.out.print(curDay + "/" + curMonth + "/" + curYear);
+						if ((curDay == 1) && (curDayOfWeek) == 1) {
+							System.out.print(" Sunday");
+							countSunday++;
+							curDay++;
+							curDayOfWeek++;
+						} else {
+							curDay++;
+							curDayOfWeek++;
+						}
+						if (curDayOfWeek > 7) {
+							curDayOfWeek = 1;
+						}
+					}
+					System.out.println();
+				}
+				curMonth++;
+			}
+			curYear++;
 		}
+		System.out.println("During the 20th century, " + countSunday + " Sundays fell on the first day of the month");
 	}
 
 	/**
@@ -83,13 +73,13 @@ public class Calendar1 {
 	 * @param year  - represents the year
 	 * @return - the number of days in the given month and year
 	 */
-	private static int nDaysInMonth(int month, int year) {
-		switch (month) {
+	private static int nDaysInMonth(int curMonth, int curYear) {
+		switch (curMonth) {
 			case 1, 3, 5, 7, 8, 10, 12: // January, March, May, July, August, October, and December
 				nDays = 31;
 				break;
 			case 2: // February
-				nDays = isLeapYear(year) ? 29 : 28;
+				nDays = isLeapYear(curYear) ? 29 : 28;
 				break;
 			case 4, 6, 9, 11: // April, June, September, and November
 				nDays = 30;
