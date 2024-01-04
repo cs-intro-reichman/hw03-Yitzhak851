@@ -1,3 +1,4 @@
+
 public class Calendar1 {
 	// Starting the calendar on 1/1/1900
 	static int curMonth;
@@ -14,10 +15,9 @@ public class Calendar1 {
 		advance();
 	}
 
-	// Advances the date (day, month, year) and the day-of-the-week.
-	// If the month changes, sets the number of days in this month.
-	// Side effects: changes the static variables dayOfMonth, month, year,
-	// dayOfWeek, nDaysInMonth.
+	/**
+	 * This founction print the calender from 1990 - 1999 inclusive.
+	 */
 	public static void advance() {
 		curYear = 1900;
 		endYear = 1999;
