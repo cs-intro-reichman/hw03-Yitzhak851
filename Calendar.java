@@ -1,5 +1,5 @@
 
-public class Calender {
+public class Calendar {
     // Starting the calendar on 1/1/1900
     static int curMonth;
     static int curDay;
