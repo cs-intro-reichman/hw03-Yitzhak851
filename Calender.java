@@ -1,7 +1,5 @@
-/**
- * Prints the calendars of all the years in the 20th century.Also prints the
- * number of Sundays that occured on the first day of the month during this
- * period.
+/*  
+ * 
  */
 public class Calender {
     // Starting the calendar on 1/1/1900
@@ -13,9 +11,10 @@ public class Calender {
     static int nDaysInMonth; // num of days at curr month
     static boolean isLeapYear; // true if year is a leap year
     static int nDays; // number of days in the month
-    static int countSunday;
 
     public static void main(String args[]) {
+        curYear = Integer.parseInt(args[0]);
+        endYear = curYear + 1;
         advance();
     }
 
@@ -23,10 +22,7 @@ public class Calender {
      * This founction print the calender from 1990 - 1999 inclusive.
      */
     public static void advance() {
-        curYear = 1900;
-        endYear = 1999;
         curDayOfWeek = 2;
-        countSunday = 0;
         while (curYear <= endYear) {
             curMonth = 1;
             while (curMonth <= 12) {
@@ -36,7 +32,6 @@ public class Calender {
                         System.out.print(curDay + "/" + curMonth + "/" + curYear);
                         if ((curDay == 1) && (curDayOfWeek) == 1) {
                             System.out.print(" Sunday");
-                            countSunday++;
                             curDay++;
                             curDayOfWeek++;
                         } else {
@@ -53,7 +48,6 @@ public class Calender {
             }
             curYear++;
         }
-        System.out.println("During the 20th century, " + countSunday + " Sundays fell on the first day of the month");
     }
 
     /**
